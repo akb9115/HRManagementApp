@@ -1,0 +1,16 @@
+<div class="row">
+    <div class="col col_custom_w" *ngFor="let data of filteredData">
+        <div class="media" (click)="searchByDepartment(data.name)">
+            <header>
+                <img src="{{ data.imageUrl }}" class="w-100">
+            </header>
+
+            <td>
+                <h4 class="title">{{ data.name }}</h4>
+                <br>
+                <h6>Number of Employees</h6>
+                <h4 class="title">{{ data.count }}</h4>
+            </td>
+        </div>
+    </div>
+</div>

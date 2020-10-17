@@ -1,0 +1,9 @@
+<div *ngIf="!toggleValue; else listBlock">
+    <app-card [cardData]="employeeCardData" (viewProfileEmitter)="viewEmployeeProfile($event)" (editProfileEmitter)="editEmployeeProfile($event)" (deleteProfileEmitter)="deleteEmployeeProfile($event)" (restoreProfileEmitter)="restoreEmployeeProfile($event)"></app-card>
+</div>
+<ng-template #listBlock>
+        <app-list [listData]="employeeListData" [columns]="listColumns" (viewProfileEmitter)="viewEmployeeProfile($event)" (editProfileEmitter)="editEmployeeProfile($event)" (deleteProfileEmitter)="deleteEmployeeProfile($event)" (restoreProfileEmitter)="restoreEmployeeProfile($event)"></app-list>
+</ng-template>
+<button title="Add Employee" class="btn bottomButton" (click)="addEmployeeProfile()">
+    <i class="fa fa-plus" aria-hidden="true"></i>
+</button>

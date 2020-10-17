@@ -1,0 +1,41 @@
+<nav class="navbar" *ngIf="loggedInUser;else idNotReceivedNavbar">
+    <label for="back" *ngIf="currentPage!='Home'" class="Header-item fa fa-arrow-left basic-btn" (click)="backToPreviousPage()"
+        title="Go to previous page"></label>
+    <label for="home" class="Header-item fa fa-home basic-btn" (click)="home()" title="Go to Home"></label>
+    <div ngbDropdown class="d-inline-block ml-auto">
+        <div class="dropdownToggler" ngbDropdownToggle>
+            <img class="rounded-circle" src="{{ loggedInUser.profile.image }}" width="30" height="30">
+        </div>
+        <button ngbDropdownMenu class="dropdown-menu-right">
+            <label class="emp_name dropdown-item">{{ loggedInUser.firstName }} {{ loggedInUser.middleName }}
+                {{ loggedInUser.lastName }}</label>
+            <div class="dropdown-divider"></div>
+            <button class="func_btn dropdown-item" (click)="viewMyProfile()">Profile</button>
+            <button class="func_btn dropdown-item" (click)="viewDeletedProfile()">Deleted Profiles</button>
+            <button class="func_btn dropdown-item" (click)="openDepartmentFilter()">Department Filter</button>
+            <div class="dropdown-divider"></div>
+            <button class="func_btn dropdown-item" (click)="logout()">Logout</button>
+        </button>
+    </div>
+</nav>
+
+<ng-template #idNotReceivedNavbar>
+    <nav class="navbar">
+        <label for="back" *ngIf="currentPage!='Home'" class="Header-item fa fa-arrow-left basic-btn" title="Go to previous page"></label>
+        <label for="home" class="Header-item fa fa-home basic-btn" (click)="home()" title="Go to Home"></label>
+        <div ngbDropdown class="d-inline-block ml-auto">
+            <div class="dropdownToggler" ngbDropdownToggle>
+                <img class="rounded-circle" alt="Image" width="26" height="26">
+            </div>
+            <button ngbDropdownMenu class="dropdown-menu-right">
+                <label class="emp_name dropdown-item">Id Not Found</label>
+                <div class="dropdown-divider"></div>
+                <button class="func_btn dropdown-item">Profile</button>
+                <button class="func_btn dropdown-item">Deleted Profiles</button>
+                <button class="func_btn dropdown-item">Department Filter</button>
+                <div class="dropdown-divider"></div>
+                <button class="func_btn dropdown-item" (click)="logout()">Logout</button>
+            </button>
+        </div>
+    </nav>
+</ng-template>

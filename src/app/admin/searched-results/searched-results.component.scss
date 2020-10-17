@@ -1,0 +1,12 @@
+.container{
+    padding: 0;
+    margin: 5px;
+    background-color: rgb(236, 241, 247);
+    max-height: 82vh;
+    height: 79vh;
+    overflow-y: auto;
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+}

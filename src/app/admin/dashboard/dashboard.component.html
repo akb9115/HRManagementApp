@@ -1,0 +1,7 @@
+<app-search-toggle-bar (toggleValueEmitter)="updateToggleValue($event)" (sortingKeyEmitter)="changeSortKey($event)" (sortingOrderEmitter)="changeSortOrder($event)">
+</app-search-toggle-bar>
+
+<div class="container">
+    <app-view-toggler [toggleValue]="checkToggleValue" [employeeListData]="listData" [employeeCardData]="cardData" (refreshPageEmitter)="refreshPage()">
+    </app-view-toggler>
+</div>

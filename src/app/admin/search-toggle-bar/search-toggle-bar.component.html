@@ -1,0 +1,52 @@
+<div class="search-container d-table w-100 p-1 main-panel">
+        
+    <div class="float-right">
+        <input type="text" class="search-box form-control pr-4 d-inline w-auto" placeholder="Search..." name="search" [(ngModel)]="searchedQuery" (keyup.enter)="searchEmployee()">
+        <button class="btn search mb-1" (click)="searchEmployee()" title="Search">
+            <i class="fa fa-search"></i>
+        </button>
+
+
+
+        <div ngbDropdown class="d-inline-block">
+            <div class="dropdownToggler btn-sort" ngbDropdownToggle>
+                <button class="btn ">Sort by</button>
+            </div>
+            <button ngbDropdownMenu class="dropdown-menu-right">
+            <table class="sort_table">
+                <tr class="func_btn">
+                    <td><i class="fa fa-circle" *ngIf="sortKey==='id'"></i></td>
+                    <td>
+                        <button class="func_btn dropdown-item" (click)="changeSortKey('id')">
+                            Employee ID</button>
+            </td>
+            </tr>
+            <tr class="separator func_btn">
+                <td><i class="fa fa-circle" *ngIf="sortKey==='name'"></i></td>
+                <td>
+                    <button class="func_btn dropdown-item" (click)="changeSortKey('name')">
+                            Employee Name</button>
+                </td>
+            </tr>
+            <tr class="func_btn">
+                <td><i class="fa fa-circle" *ngIf="sortOrder==='asc'"></i></td>
+                <td>
+                    <button class="func_btn dropdown-item" (click)="changeSortOrder('asc')">
+                            Ascending</button>
+                </td>
+            </tr>
+            <tr class="func_btn">
+                <td> <i class="fa fa-circle" *ngIf="sortOrder==='dsc'"></i></td>
+                <td>
+                    <button class="func_btn dropdown-item" (click)="changeSortOrder('dsc')">
+                                Descending</button>
+                </td>
+            </tr>
+            </table>
+            </button>
+        </div>
+       
+        <button class="btn ml-4 toggleButtons fa fa-bars" (click)="listView()" [ngClass]="{'active' : checkToggleValue== true}" title="List View"></button>
+        <button class="btn toggleButtons fa fa-th-large" (click)="cardView()" [ngClass]="{'active' : checkToggleValue== false}" title="Card View"></button>
+    </div>
+</div>

@@ -1,0 +1,14 @@
+<app-search-toggle-bar (toggleValueEmitter)="updateToggleValue($event)" (sortingKeyEmitter)="changeSortKey($event)" (sortingOrderEmitter)="changeSortOrder($event)">
+</app-search-toggle-bar>
+
+<div class="container-fluid  container" *ngIf="checkForData;else NotFound">
+    <div><i class="fa fa-info-circle"></i> Found {{ resultsLength }} results.</div>
+    <app-view-toggler [toggleValue]="checkToggleValue" [employeeListData]="listData" [employeeCardData]="cardData" (refreshPageEmitter)="refreshPage()">
+    </app-view-toggler>
+</div>
+
+<ng-template #NotFound>
+    <div class="container-fluid">
+        <i class="fa fa-info-circle"></i> No results matched your search.
+    </div>
+</ng-template>

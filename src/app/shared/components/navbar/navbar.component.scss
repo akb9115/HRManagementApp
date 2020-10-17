@@ -1,0 +1,33 @@
+
+.navbar{
+    background-color: #337ab7;
+    top: 0;
+    right: 0;
+    left: 0;
+    position: fixed;
+    z-index: 1050;
+    box-shadow: 1px 1px 4px 0; 
+    .dropdownToggler,.Header-item{
+        color: white;
+        cursor: pointer;
+        padding-top:5px ;
+        margin-right: 12px;
+        font-size: 18px;
+        font-weight: 100;
+    }
+    .emp_name{
+        font-size: 14px;
+        font-weight: 600;
+        cursor: default;
+    }
+    
+    .func_btn:hover{
+        color: white;
+        background-color: #337ab7;
+    }
+}
+
+
+hr{
+    margin: 0;
+}

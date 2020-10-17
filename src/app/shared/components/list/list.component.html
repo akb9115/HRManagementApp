@@ -1,0 +1,38 @@
+<table class="table batch table-sm table-responsive" infiniteScroll [infiniteScrollDistance]="2" [infiniteScrollThrottle]="50" (scrolled)="onScroll()" [scrollWindow]="false" style="overflow-y: auto;">
+    <div class="table-content">
+        <div class="table-wrapper ">
+            <table class="table table-striped table-hover table-sm">
+                <thead class="tableColumns">
+                    <th *ngFor="let col of columns">
+                        {{ col }}
+                    </th>
+                    <th>Actions</th>
+                </thead>
+
+                <tbody>
+                    <tr *ngFor="let data of listInView">
+                        <td class="table-data" *ngFor="let col of columns" (click)="viewProfile(data.ID)">
+                            <div *ngIf="col==='Name'">
+                                <img width="30" class="rounded-circle mr-2" [src]=data.Image> {{ data['Name'] }}
+                            </div>
+                            <div *ngIf="col!=='Name'">
+                                {{ data[col] }}
+                            </div>
+                        </td>
+
+                        <td class="actionbar mt-3">
+                            <a (click)="viewProfile(data.ID)" data-toggle="modal"><i class="material-icons"
+                                    data-toggle="tooltip" title="View">&#xE8f4;</i></a>
+                            <a (click)="editProfile(data.ID)" data-toggle="modal"><i class="material-icons"
+                                    data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+                            <a (click)="deleteProfile(data.ID)" *ngIf="data.isDeleted===false" data-toggle="modal"><i
+                                    class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                            <a *ngIf="data.isDeleted===true" (click)="restoreProfile(data.ID)" data-toggle="modal"><i
+                                    class="material-icons" data-toggle="tooltip" title="Add">person_add</i></a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</table>

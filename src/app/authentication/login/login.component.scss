@@ -1,0 +1,23 @@
+
+//Login Component only
+.banner-content {
+    background: url('../../../assets/images/cover.jpg') no-repeat fixed;
+    background-size: cover;
+    max-width: 100%;
+    .card {
+        position: relative;
+        width: 405px;
+        padding: 2%;
+        border-radius: 10px;
+        align-items: center;
+        margin-top: 70px;
+        box-shadow: 1px 1px 4px 0;
+        h1 {
+            font-weight: 700;
+            font-size: 30px;
+            color: #f7c863;
+        }
+    }
+}
+
+

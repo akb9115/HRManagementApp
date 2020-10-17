@@ -1,0 +1,163 @@
+<div *ngIf="employeeData">
+    <div class="centered" *ngIf="currentAction==='Delete'">
+        <div class="container">
+            <div *ngIf="viewBeforeDeletion; else deletionSuccess">
+                <div class="modal-header">
+                    <p class="modal-title" id="modal-title"> <i class="fa fa-exclamation-triangle fact"></i></p>
+                </div>
+                <div class="modal-body">
+                    <p><strong>Are you sure you want to delete <span class="text-primary">"{{ employeeData.firstName }}
+                                {{ employeeData.middleName }} {{ employeeData.lastName }}"</span>
+                            profile?</strong>
+                    </p>
+                    <p>All information associated to this user profile will be deleted.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" (click)="modal.dismiss('cancel click')">Cancel</button>
+                    <button type="button" class="btn btn-danger" (click)="confirmDelete()">Ok</button>
+                </div>
+            </div>
+            <ng-template #deletionSuccess>
+                <div class="modal-header">
+                    <p class="modal-title" style="color:green;" id="modal-title"> <i class="fa fa-check-circle fact"></i>
+                    </p>
+                </div>
+                <div class="modal-body">
+                    <p>The user profile of <span class="text-primary">"{{ employeeData.firstName }}
+                            {{ employeeData.middleName }} {{ employeeData.lastName }}"</span> has been deleted successfully!!!
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" (click)="refreshPage()">Close</button>
+                </div>
+            </ng-template>
+        </div>
+    </div>
+
+    <div class="centered" *ngIf="currentAction==='Restore'">
+        <div class="container">
+            <div *ngIf="viewBeforeRestoration; else restorationSuccess">
+                <div class="modal-header">
+                    <p class="modal-title" id="modal-title"> <i class="fa fa-exclamation-triangle fact"></i></p>
+                </div>
+                <div class="modal-body">
+                    <p><strong>Are you sure you want to restore <span class="text-primary">"{{ employeeData.firstName }}
+                                {{ employeeData.middleName }} {{ employeeData.lastName }}"</span>
+                            profile?</strong>
+                    </p>
+                    <p>All information associated to this user profile will be restored.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" (click)="modal.dismiss('cancel click')">Cancel</button>
+                    <button type="button" class="btn btn-danger" (click)="confirmRestore()">Ok</button>
+                </div>
+            </div>
+            <ng-template #restorationSuccess>
+                <div class="modal-header">
+                    <p class="modal-title" style="color:green;" id="modal-title"> <i class="fa fa-check-circle fact"></i>
+                    </p>
+                </div>
+                <div class="modal-body">
+                    <p>The user profile of <span class="text-primary">"{{ employeeData.firstName }}
+                            {{ employeeData.middleName }} {{ employeeData.lastName }}"</span> has been restored successfully!!!
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" (click)="refreshPage()">Close</button>
+                </div>
+            </ng-template>
+        </div>
+    </div>
+
+    <div class="centered" *ngIf="currentAction==='ProfileAdded'">
+        <div class="container">
+            <div>
+                <div class="modal-header">
+                    <p class="modal-title" style="color:green;" id="modal-title"><i class="fa fa-check-circle fact"></i></p>
+                </div>
+                <div class="modal-body">
+                    <p>The user profile of <span class="text-primary">"{{ employeeData.firstName }}
+                        {{ employeeData.middleName }} {{ employeeData.lastName }}"</span> has been created successfully!!!
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" (click)="viewProfile()">View Profile</button>
+                    <button type="button" class="btn btn-outline-secondary" (click)="addProfile()">Add New Profile</button>
+                    <button type="button" class="btn btn-outline-secondary" (click)="home()">Home</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="centered" *ngIf="currentAction==='ProfileUpdated'">
+        <div class="container">
+            <div>
+                <div class="modal-header">
+                    <p class="modal-title" style="color:green;" id="modal-title"><i class="fa fa-check-circle fact"></i></p>
+                </div>
+                <div class="modal-body">
+                    <p>The user profile of <span class="text-primary">"{{ employeeData.firstName }}
+                        {{ employeeData.middleName }} {{ employeeData.lastName }}"</span> has been updated successfully!!!
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" (click)="viewProfile()">View Profile</button>
+                    <button type="button" class="btn btn-outline-secondary" (click)="home()">Home</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="centered" *ngIf="currentAction==='DuplicateIDError'">
+        <div class="container">
+            <div>
+                <div class="modal-header">
+                    <p class="modal-title" style="color:green;" id="modal-title"><i class="fa fa-exclamation-triangle fact"></i></p>
+                </div>
+                <div class="modal-body">
+                    <p>Employee ID already exists.
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" (click)="modal.dismiss('close')">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="centered" *ngIf="currentAction==='ResetConfirmation'">
+        <div class="container">
+            <div>
+                <div class="modal-header">
+                    <p class="modal-title" style="color:green;" id="modal-title"><i class="fa fa-exclamation-triangle fact"></i></p>
+                </div>
+                <div class="modal-body">
+                    <p>Reseting the form will erase all data.Press "OK" to confirm
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" (click)="resetForm()">OK</button>
+                    <button type="button" class="btn btn-outline-secondary" (click)="modal.dismiss('close')">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="centered" *ngIf="currentAction==='RetrievalConfirmation'">
+        <div class="container">
+            <div>
+                <div class="modal-header">
+                    <p class="modal-title" style="color:green;" id="modal-title"><i class="fa fa-exclamation-triangle fact"></i></p>
+                </div>
+                <div class="modal-body">
+                    <p>Do you want to restore lost Form Data ? Press "OK" to confirm
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" (click)="retrievalConfirmation()">OK</button>
+                    <button type="button" class="btn btn-outline-secondary" (click)="modal.dismiss('close')">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>

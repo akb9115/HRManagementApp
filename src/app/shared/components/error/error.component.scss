@@ -1,0 +1,13 @@
+.error_message {
+    font-size: 26px;
+    text-align: center;;
+}
+
+.home_link {
+    color: #007bff;
+    text-align: center;;
+    cursor: pointer;
+    &:hover {
+        text-decoration: underline;
+    }
+}

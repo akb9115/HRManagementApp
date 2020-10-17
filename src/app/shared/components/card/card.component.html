@@ -1,0 +1,23 @@
+<div class="row m-0 batch" infiniteScroll [infiniteScrollDistance]="2" [infiniteScrollThrottle]="50" (scrolled)="onScroll()" [scrollWindow]="false" style="overflow-y: auto;">
+    <div class="col col_custom_w" *ngFor="let card of cardsInView">
+        <div class="card p-2 mb-2 mt-1">
+            <div class="media" (click)="viewProfile(card.id)">
+                <img [src]=card.cardImage alt="" class="rounded-circle mr-3 mt-1">
+                <div class="media-body info">
+                    <p *ngFor="let info of card.cardData" title="{{ info }}">{{ info | truncate }}</p>
+                </div>
+            </div>
+
+            <div class="actionbar mt-1 text-right">
+                <a (click)="viewProfile(card.id)" data-toggle="modal"><i class="material-icons" data-toggle="tooltip"
+                        title="View">&#xE8f4;</i></a>
+                <a (click)="editProfile(card.id)" data-toggle="modal"><i class="material-icons" data-toggle="tooltip"
+                        title="Edit">&#xE254;</i></a>
+                <a *ngIf="card.isDeleted===false" (click)="deleteProfile(card.id)" data-toggle="modal"><i
+                        class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                <a *ngIf="card.isDeleted===true" (click)="restoreProfile(card.id)" data-toggle="modal"><i
+                        class="material-icons"  data-toggle="tooltip" title="Add">person_add</i></a>
+            </div>
+        </div>
+    </div>
+</div>

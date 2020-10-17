@@ -1,0 +1,28 @@
+{
+    "department":[
+    {
+        "Engineering-Development":"https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSPb1ErDRUJZp64_qIt_BGgZw8GimdwdswEipTQh1_8SbFc5mn2"
+    },
+    {
+        "Administration":"https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRnOTjuR3ByHCDTUKLKfWXYxIN4qQF-IwP9oDvgRY69qyF51pna"
+    },
+    {
+        "Accounts":"https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS_9szWpoOHwO34c-8-pC4l5ajB7bzouay-3DLXUaoApz5kqd_n"
+    },
+    {
+        "IT":"https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQPJ1nX57tchk9sEOivVrIX_3vpgNuEV88nNuAerOBnlqu-UFX6"
+    },
+    {
+        "Management":"https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRay-5C-aDDXVJD8h87wO9AQkxt6XP-sjuJSRT0_3dQYvFJuU3z"
+    },
+    {
+        "Quality Assurance":"https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQe-eIefKHD9xgQCzal4rOTgc0KBFadg36vIyq-zxSmN_-U_kaP"
+    },
+    {
+        "Human Resource":"https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQF_waQKBTv27-C9yJVYhYDFh0KBGORKXYujjrOF6tb_mBILDNP"
+    },
+    {
+        "Back Office":"https://www.akronglobalsolutions.com/wp-content/uploads/2018/08/back-office-img-1024x855.png"
+    }
+]
+}

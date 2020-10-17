@@ -1,0 +1,62 @@
+<div *ngIf="userCardData" class="row container more">
+    <img src="{{userCardData[0].cardImage}}" class="mr-5 rounded-circle">
+    <div>
+        <div *ngFor="let temp of userCardData[0].cardData" class="card_info">
+            {{temp}}
+        </div>
+    </div>
+</div>
+
+
+<!-- ------------------------Nav Tabs Link---------------------------------------- -->
+
+<ul class="nav  w3-row col-md-12" id="myTab" role="tablist">
+    <li class="navButton " [ngClass]="{'active' : profileButtonEnabled== true}" (click)="viewProfileDetails()">
+        <a class="flex-sm-fill text-sm-center" id="home-tab" data-toggle="tab" role="tab" aria-controls="profile" aria-selected="true">Profile</a>
+    </li>
+    <li class="navButton" [ngClass]="{'active' : personalButtonEnabled== true}" (click)="viewPersonalDetails()">
+        <a class="flex-sm-fill text-sm-center" id="profile-tab" data-toggle="tab" role="tab" aria-controls="personal" aria-selected="false">Personal</a>
+    </li>
+
+    <li class="navButton" [ngClass]="{'active' : salaryButtonEnabled== true}" (click)="viewSalaryDetails()">
+        <a class="flex-sm-fill text-sm-center" id="contact-tab" data-toggle="tab" role="tab" aria-controls="salary" aria-selected="false">Salary & Legal</a>
+    </li>
+    <li class="navButton" [ngClass]="{'active' : othersButtonEnabled== true}" (click)="viewOthersDetails()">
+        <a class="flex-sm-fill text-sm-center" id="contact-tab" data-toggle="tab" role="tab" aria-controls="others" aria-selected="false">Others</a>
+
+    </li>
+</ul>
+
+<!-- -----------------------------------tab content--------------------------------- -->
+
+
+<div class="tab-content">
+    <div class="tab-pane fade show active" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+        <div *ngIf="employeeProfileData" class="row  view-data container">
+            <div *ngFor="let title of headings" class="space col-8 col-md-6 col-lg-4 contain">
+                <h3>{{ title }} </h3>
+                <hr>
+                <div *ngIf="!(title === 'Hobbies' || title === 'Skills')">
+                    <div *ngFor="let data of employeeProfileData[title]">
+                        <table>
+                            <tr *ngFor="let info of allFields[title]">
+                                <td style="font-weight: 600;">{{ info }}</td>
+                                <td>:</td>
+                                <td>{{ data[info] }}</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div *ngIf="title==='Hobbies' || title==='Skills'">
+                    <div *ngFor="let info of employeeProfileData[title];index as i">
+                        <div>{{ info }}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<button class="btn bottomButton" (click)="editProfile()">
+    <i class="fa fa-edit" aria-hidden="true"></i>
+</button>

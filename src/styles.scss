@@ -1,0 +1,157 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.css';
+
+
+// This is the scrollbar we used in all the components
+::-webkit-scrollbar {
+    width: 5px;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 20px;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #337ab7;
+    border-radius: 10px;
+}
+
+
+//Global html and body scss
+html {
+    height: 100vh;
+}
+body {
+    max-height: 100vh;
+    overflow-x: hidden;
+    margin: 0;
+    background-color: rgb(237, 242, 248);
+}
+
+
+/*Login page overlay background color */
+.overlay {
+    background: rgba(1, 57, 97, 0.7);
+    height: 100vh;
+    /* This is for the content on the login page */
+    .mycontent {
+        padding: 0;
+    }
+}
+
+// This is for company logo on login page 
+.companylogo {
+    max-width: 100%;
+}
+
+
+// Basic scss for all containers
+.container {
+    background-color: white;
+    border-radius: 8px;
+    margin: 0.5%;
+    padding: 14px;
+    max-width: 99%;
+    box-shadow: 1px 1px 4px 0;
+} 
+
+
+// this for input fields for all components
+.input-field {
+    margin-bottom: 15px;
+}
+.input1 {
+    text-align: center;
+    padding: 25px 55px;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: #f6f6f6;
+    display: inline-block;
+    border: 2px;
+    font-size: 16px;
+    border-style: solid;
+    border-color: #b0c7d6;
+    margin-top: 15px;
+}
+.form-control {
+    height: 33px;
+    margin-bottom: 5px;
+}
+
+
+/* These are the basic buttons used throughout the website */
+.form-btn {
+    background: #337ab7;
+    color: #fff;
+    font-size: 14pt;
+    margin-top: 15px;
+    padding: 4px 40px;
+    border-radius: 21px;
+}
+.form-btn:hover {
+    opacity: 0.9;
+}
+
+.simple-btn {
+    background-color: white;
+    font-size: 14pt;
+    margin-top: 15px;
+    padding: 4px 40px;
+    border-radius: 21px;
+    border: 1px solid;
+    margin-right: 10px;
+}
+
+.btn-general {
+    color: white;
+    background-color: #337ab7;
+    height: 40px;
+    border-radius: 4px;
+    margin-top: 15px;
+}
+.basic-btn{
+    color: white;
+    font-size: 20px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 3px 0;
+    margin-bottom: 0px;
+    display: inline-block;
+    height: 30px;
+    width: 30px;
+    text-align: center;
+    padding: 4px 0px;
+}
+
+// This is the button used on bottom-side of home-page add-form and view-profile as well
+.bottomButton{
+    position:fixed;
+    bottom:15px;
+    right:15px;
+    border-radius: 50%;
+    background-color: #337ab7;
+    font-size: 18px;
+    padding: 0;
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    color: rgb(247, 247, 247);
+    box-shadow: 1px 1px 4px 1px #888888;
+} 
+
+//For all labels,profile image,modals
+.label {
+    color: #070000f8;
+    font-size: 18px;
+}
+.profile-image {
+    width: 25%;
+    height: 25%;
+}
+.modal-content {
+    border: 0px;
+}

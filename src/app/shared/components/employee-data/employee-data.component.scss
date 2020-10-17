@@ -1,0 +1,83 @@
+.more {
+    margin-top: 62px;
+    img {
+        width: 100px;
+    }
+    .card_info {
+        &:first-child {
+            font-weight: 600;
+        }
+    }
+}
+
+
+// Right-side Tabs
+.w3-row {
+    width: auto;
+}
+
+.nav{
+    padding: 0px;
+  
+}
+
+.navButton {
+    background-color: white;
+    padding: 8px;
+    border-radius: 6px;
+    min-width: 24.27%;
+    margin: 2px 1px 2px 3px;
+    margin-left: 0.5%;
+    text-align: center;
+    box-shadow: 1px 1px 4px 0;
+    cursor: pointer;
+     :hover {
+        color: black
+    }
+    &.active {
+        color: rgb(255, 255, 255);
+        background-color: #337ab7;
+    }
+}
+
+
+.tab-content{
+    .view-data{
+        overflow-y: scroll;
+        height: 64vh;
+    }
+    .contain {
+        margin-right: 0%;
+        margin-bottom: 40px;
+        margin-left: 0px;
+    }
+}
+
+
+
+tr {
+    vertical-align: top;
+}
+
+td {
+    padding-right: 10px;
+}
+
+hr {
+    border: 2px solid rgba(8, 61, 175, 0.829);
+    margin: 0 0 15px 0;
+}
+
+@media (max-height: 646px) {
+    .tab-content{
+        .view-data{
+            height: 57vh;
+        }
+    }
+}
+
+@media (max-height: 700px) {
+    .navButton {
+        max-width: 22%;
+    }
+}

@@ -1,0 +1,64 @@
+.search-container {
+    margin-top: 60px;
+    .search-box {
+        min-width: 295px;
+        box-shadow: 1px 1px 4px 0;
+    }
+    button.search {
+        color: #337ab7;
+        background: none;
+        border: navajowhite;
+        position: relative;
+        padding: 0;
+        margin-left: -22px;
+    }
+    .toggleButtons {
+        font-size: 25px;
+        color: #333;
+        padding: 0;
+        margin-left: 10px;
+        &.active {
+            color: #337ab7;
+        }
+    }
+    .btn:focus {
+        box-shadow: none;
+    }
+    .dropdownToggler {
+        margin-left: 1.5rem;
+        background-color: #337ab7;
+        color: white;
+        cursor: pointer;
+        padding-top: 5px;
+        border-radius: 4px;
+        padding: 3px;
+        .btn {
+            padding: 0 1px 0 1px;
+            color: white;
+            vertical-align: top;
+        }
+    }
+    .func_btn {
+        padding-left: 3px;
+    }
+    .fa-circle {
+        margin: 10px;
+        font-size: 9px;
+    }
+    .dropdown-toggle::after {
+        vertical-align: middle;
+    }
+}
+
+.btn-sort {
+    box-shadow: 1px 1px 4px 0 #888888;
+}
+
+.func_btn:hover {
+    color: white;
+    background-color: #337ab7;
+}
+
+.separator {
+    border-bottom: 1px solid #e9ecef;
+}

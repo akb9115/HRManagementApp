@@ -1,0 +1,26 @@
+ 
+.centered {
+    max-width: fit-content;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 1050;
+    position: fixed;
+    align-items: center;
+    display: flex;
+    .container {
+        background-color: white;
+        position: relative;
+        text-align: center;
+        margin: auto;
+        padding: 0;
+        .modal-header {
+            display: inherit;
+            .fact {
+                font-size: 50px;
+            }
+        }
+    }
+}

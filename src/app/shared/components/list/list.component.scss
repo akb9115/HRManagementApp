@@ -1,0 +1,54 @@
+.table {
+    position: relative;
+    margin-bottom: 0;
+    border-radius: 9px;
+    .tableColumns {
+        color: #FFFF;
+        font-weight: 500;
+        font-size: .875rem;
+        th {
+            background-color: #337ab7;
+            position: sticky;
+            top: -1px;
+        }
+    }
+    .table-data {
+        padding: 8px;
+        vertical-align: middle;
+        font-size: 13px;
+        cursor: pointer;
+    }
+    .actionbar {
+        margin: 0px -0.5rem;
+        padding-top: 0.5rem;
+        a {
+            margin-right: 6px;
+            cursor: pointer;
+            border: 2px solid #ccc;
+            border-radius: 50%;
+            display: inline-block;
+            height: 30px;
+            width: 30px;
+            text-align: center;
+            padding: 4px 0px;
+            i {
+                font-size: 18px;
+                color: #666
+            }
+            &:hover {
+                color: rgb(136, 136, 136)
+            }
+        }
+    }
+}
+
+tr {
+    background-color: #ffffff;
+    &:hover {
+        color: rgb(136, 136, 136)
+    }
+}
+
+.batch {
+    height: 80.9vh;
+}
